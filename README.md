@@ -10,10 +10,10 @@
 ## Partecipanti del gruppo 
 
 #### Autore
-- *** Donzelli Lorenzo **
+- ***Donzelli Lorenzo**
 
 #### Programmatori
-- ** Galantini Corrado **
-- ** Donzelli Lorenzo **
-- ** Aprea Mario **
+- **Galantini Corrado**
+- **Donzelli Lorenzo**
+- **Aprea Mario**
 
