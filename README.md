@@ -1,7 +1,6 @@
 # ClientServer_Algorithm
 
-### 
-###
+### Introduzione al progetto
 
 ## Creato con 
 
@@ -16,5 +15,9 @@
 - **Galantini Corrado**
 - **Donzelli Lorenzo**
 - **Aprea Mario**
+
+### Spiegazione del progetto
+
+### Spiegazione delle classi
 
 ## Supporti 
