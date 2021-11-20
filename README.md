@@ -10,7 +10,7 @@
 ## Partecipanti del gruppo 
 
 #### Autore
-- ***Donzelli Lorenzo**
+- **Donzelli Lorenzo**
 
 #### Programmatori
 - **Galantini Corrado**
