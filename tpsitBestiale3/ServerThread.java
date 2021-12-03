@@ -2,13 +2,14 @@ import java.net.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
+
 /**
  * @author XOShu4
- * classe che si occupa dell' interfacciamento tra Client e MsgBox. 
- * gestisce la prima parte dei sing in dei Client
- * prende in input i comandi del Client.
- * trasferisce i messaggi alla MsgBox.
- * genere il Thread ServerThreadTReader
+ *         classe che si occupa dell' interfacciamento tra Client e MsgBox.
+ *         gestisce la prima parte dei sing in dei Client
+ *         prende in input i comandi del Client.
+ *         trasferisce i messaggi alla MsgBox.
+ *         genere il Thread ServerThreadTReader
  */
 
 public class ServerThread extends Thread {
@@ -17,12 +18,13 @@ public class ServerThread extends Thread {
      */
     Socket s = null;
     /**
-     * istanza di MsgBox passata dalla classe Server. 
+     * istanza di MsgBox passata dalla classe Server.
      * contiene tutti i metodi per inserire e leggere i messaggi.
      */
     MsgBox msgBox;
     /**
-     * contiene tutti gli utenti e le rispettive PubKey nel formato -> "utente:PubKey"
+     * contiene tutti gli utenti e le rispettive PubKey nel formato ->
+     * "utente:PubKey"
      */
     ArrayList<String> PubKey;
 

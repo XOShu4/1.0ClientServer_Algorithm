@@ -14,20 +14,25 @@ import java.net.*;
 public class Client {
     /** istanzia classe RsaKey generando le chiavi */
     private static RsaKey Key = new RsaKey();
-    /** variabile condivisa tra Client e ClientThread in cui vengono inserite alcune risposte del Server */
+    /**
+     * variabile condivisa tra Client e ClientThread in cui vengono inserite alcune
+     * risposte del Server
+     */
     static String shared = "";
+
+    static String userName="";
 
     /**
      * @param subCypherText inserito dall'utente. e' la stringa da criptare.
      * 
-     * @param e passato da ServerThread e' parte della chiave pubblica
-     *          dell'utente a cui si vuole mandare il messaggio.
+     * @param e             passato da ServerThread e' parte della chiave pubblica
+     *                      dell'utente a cui si vuole mandare il messaggio.
      * 
-     * @param n passato da ServerThread e' parte della chiave pubblica
-     *          dell'utente a cui si vuole mandare il messaggio.
+     * @param n             passato da ServerThread e' parte della chiave pubblica
+     *                      dell'utente a cui si vuole mandare il messaggio.
      * 
-     *funzione volta a trasformare in BigInteger il messaggio
-     *per poi criptarlo.
+     *                      funzione volta a trasformare in BigInteger il messaggio
+     *                      per poi criptarlo.
      * 
      * @return subCodeText, numero BigInteger prodotto dalla criptazione del
      *         messaggio.
@@ -43,8 +48,11 @@ public class Client {
         subCodeText = subCodeText.modPow(e, n);
         return subCodeText;
     }
+
     /**
-     * funzione che estrapola le Key del Client ricevente e, utilizzando il metodo subCript, cripta il messaggio
+     * funzione che estrapola le Key del Client ricevente e, utilizzando il metodo
+     * subCript, cripta il messaggio
+     * 
      * @param AppKey
      * @param ToMessage
      * @return appMsg, numero BigInteger prodotto dalla criptazione del
@@ -69,7 +77,6 @@ public class Client {
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in))) {
             String serverReply;
-            String userName;
             /** sing in utente */
             do {
                 System.out.println("inserisci nome utente");
@@ -83,6 +90,7 @@ public class Client {
             /** avvio thread ClientReader */
             ClientReader t = new ClientReader(out, in, Key);
             new Thread(t).start();
+
             System.out.println("Connessione con il server effettuata");
             System.out.println("comandi: ");
             System.out.println("/listaUtenti:");
@@ -91,37 +99,48 @@ public class Client {
             String userInput = null;
             try { // inizio presa in input messaggi utente. i comandi inseriti vengono smistati.
                 while ((userInput = stdIn.readLine()) != null) {
-                    if (userInput.contains("/sendToAll:")) {                //invio del messaggio a tutti i Client online
+                    if (userInput.contains("/sendToAll:")) { // invio del messaggio a tutti i Client online
                         out.println("/sendToAll:");
-                        while (!shared.contains("STOP")) {                        //finche ci sono Client allora
-                            do {Thread.sleep(100);} while (shared.equals(""));     //attendo che ClientTherad scriva su shared
+                        while (!shared.contains("STOP")) { // finche ci sono Client allora
+                            do {
+                                Thread.sleep(100);
+                                shared = t.getShared();
+                            } while (shared.equals("")); // attendo che ClientTherad scriva su shared
                             if (!shared.contains("STOP")) {
                                 String AppKey = shared;
                                 shared = "";
-                                String ToMessage = userInput.substring(userInput.indexOf("!") + 1);
+                                String ToMessage = userInput.substring(userInput.indexOf(":") + 1);
                                 BigInteger appMsg = msgEnc(AppKey, ToMessage);
-                                out.println(appMsg);                                        //invio messaggio criptato
+                                out.println(appMsg); // invio messaggio criptato
                             }
                         }
-                        shared=""; 
-                    } else if(userInput.contains("/listaUtenti:")){                 //visualizazzione di tutti i client online
+                        shared = "";
+                    } else if (userInput.contains("/listaUtenti:")) { // visualizazzione di tutti i client online
                         out.println("/listaUtenti:");
-                        while (!shared.contains("STOP")) {                          //finche ci sono Client allora
-                            do {Thread.sleep(100);} while (shared.equals(""));      //attendo che ClientTherad scriva su shared
+                        while (!shared.contains("STOP")) { // finche ci sono Client allora
+                            do {
+                                Thread.sleep(100);
+                                shared = t.getShared();
+                            } while (shared.equals("")); // attendo che ClientTherad scriva su shared
                             if (!shared.contains("STOP")) {
-                                System.out.println("<User>"+shared.substring(9));   
-                                out.println();                                      //usato per abozzare una sincronizazzione tra Client e ServerThread <3
-                                shared="";
+                                System.out.println("<User>" + shared.substring(9));
+                                out.println(); // usato per abozzare una sincronizazzione tra Client e ServerThread <3
+                                shared = "";
                             }
-                        }  
-                        shared=""; 
-                    } else if (userInput.charAt(0) == '/' && userInput.contains(":")) {     //invio a uno o piu client di un messaggio
+                        }
+                        shared = "";
+                    } else if (userInput.charAt(0) == '/' && userInput.contains(":")) { // invio a uno o piu client di
+                                                                                        // un messaggio
                         String SNamesToSend = userInput.substring(1, userInput.indexOf(":"));
                         String[] UserToSend = SNamesToSend.split("/");
                         String ToMessage = userInput.substring(userInput.indexOf(":") + 1);
-                        for (String s : UserToSend) {                                // i nome utente a cui recapitare il messaggio vengono inviati                          
-                            out.println(s);                                          // serverThread, il quale attende arrivo delle chiavi da parte del ClientReader
-                            do {Thread.sleep(100);} while (shared.equals(""));     
+                        for (String s : UserToSend) { // i nome utente a cui recapitare il messaggio vengono inviati
+                            out.println(s); // serverThread, il quale attende arrivo delle chiavi da parte del
+                                            // ClientReader
+                            do {
+                                Thread.sleep(100);
+                                shared = t.getShared();
+                            } while (shared.equals(""));
                             String AppKey = shared;
                             shared = "";
                             BigInteger appMsg = msgEnc(AppKey, ToMessage);
@@ -138,5 +157,8 @@ public class Client {
             System.err.println("Couldn't get I/O for the connection to " + hostName);
             System.exit(1);
         }
+    }
+    public String getUame(){
+        return userName;
     }
 }
