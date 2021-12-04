@@ -23,6 +23,11 @@ Il seguente file contiene un programma che rappresenta l'invio di messaggi trami
 1. Vengono generate le chavi pubbliche e private, per ogni utente vengono assegnate una coppia di chiavi, questo perché senza esse non può comunicare con gli altri utenti. Le chiavi vengono generate nella classe RsaKey tramte l'algoritmo Rsa. La chiave pubblica deve essere inviata al Server.
 2. Invio di messaggi cifrati.
 3. Percepire messaggi cifrati.
+
+### Incarichi del server
+1. Attendere richieste di connessone da parte del server.
+2. Quando avviene la connessione con un client avvia un thread della classe ServerThread
+   
 ### Spiegazione delle classi
 
 ## Supporti 
