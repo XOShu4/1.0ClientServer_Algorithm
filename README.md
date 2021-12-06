@@ -3,7 +3,7 @@
 ### Introduzione al progetto
 
 ## Panoramica
-#Scopo del programma: 
+#### Scopo del programma: 
 Interfacciamento di piu client implementando algoritmo di crittografia RSA.
 
 ## Creato con 
@@ -16,18 +16,28 @@ Interfacciamento di piu client implementando algoritmo di crittografia RSA.
 
 ### Spiegazione generale del funzionamneto del programma
 I client si connettono ad un server mediante socket. 
-Verra' quindi richiesto UserName identificativo. 
-Specificando un UserName, online in quel momento, e aggiungendo un messaggio si puo communicare con altri utenti.
-#possibili comandi sono:
-**/UserName(/s): messaggio** -> invia *messaggio* a tutti gli utenti specificati, se uno o piu utenti non vengono trovati viene segnato *UserName* not fount, ed il messaggio viene inviato solo agli utenti trovati
-/listaUtenti0 -> 
- 
-
-
-### Incarichi del server
-Attendere richieste di connessone da parte del server.
- Quando avviene la connessione con un client avvia un thread della classe ServerThread
+Verra' quindi richiesto UserName identificativo.  
+#### possibili comandi sono:  
+* **/UserName(/s): messaggio** -> invia *messaggio* a tutti gli utenti specificati. Se uno o piu utenti non vengono trovati viene segnato *UserName* not fount, ed il messaggio viene inviato solo agli utenti trovati;  
+* **/listaUtenti** -> elenca tutti gli utenti online.
+*  **/SendToAll: messaggio** ->invia *messaggio* a tutti gli utenti online
+*  **/EXIT** ->  chiude la connessione con il server  
    
-### Spiegazione delle classi
+#### L'interfaccia utente e' suddivisa in due terminali:   
+Il primo dedito a ricevere i comandi dello user. Stampa eventuali errori di sintassi del comando e in caso di utenti non trovati;   
+Il secondo si occupa solamente della stampa dei messaggi ricevuti.
+
+ 
+### Server
+Attendere richieste di connessone da parte dei client.    
+Quando avviene la connessione con un client avvia un thread della classe ServerThread che gestira' i comandi degli utenti  
+   
+### Client
+Classe adibita all'interfacciamento utente.  
+Gestisce la prima fase log in, la ricezione messaggi utente, la criptazione dei messaggi, l'invio dei messaggi criptati al ServerThread e l'invio della chiave pubblica al server.  
+Inoltre avvia e comunica con ClientReader.
+
+### RsaKey
+
 
 ## Supporti 
