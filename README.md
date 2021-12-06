@@ -3,7 +3,8 @@
 ### Introduzione al progetto
 
 ## Panoramica
-Il programma è volto all'invio di messaggi tramite più utenti gestiti da un Server, crittografati tramite l'algoritmo RSA
+#Scopo del programma: 
+Interfacciamento di piu client implementando algoritmo di crittografia RSA.
 
 ## Creato con 
 - Java
@@ -14,7 +15,12 @@ Il programma è volto all'invio di messaggi tramite più utenti gestiti da un Se
 - **Aprea Mario**       
 
 ### Spiegazione generale del funzionamneto del programma
-Viene prima avviato il Server, che abilita il collegamento dei vari Client e, quindi, a comunicare tra loro. Il collegamento è gestito con i Socket.
+I client si connettono ad un server mediante socket. 
+Verra' quindi richiesto UserName identificativo. 
+Specificando un UserName, online in quel momento, e aggiungendo un messaggio si puo communicare con altri utenti.
+#possibili comandi sono:
+**/UserName(/s): messaggio** -> invia *messaggio* a tutti gli utenti specificati, se uno o piu utenti non vengono trovati viene segnato *UserName* not fount, ed il messaggio viene inviato solo agli utenti trovati
+/listaUtenti0 -> 
  
 
 
