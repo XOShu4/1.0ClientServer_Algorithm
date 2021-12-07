@@ -83,4 +83,49 @@ Gestisce tutti i messaggi che sono indirizzati al Client dal ServerThread.
 ##
 ## Codice, Protocolli ed Esempi
 ```java
-out.println("/@/Key/@/" + s);```
+out.println("/@/Key/@/" + s);
+```
+Invia al ClientReader demarcandola con il messaggio di protocollo */@/Key/@/*.
+```java
+out.println("/@/Key/@/ STOP");        
+```
+Dice al Client di uscire dalla sezione di attesa ricezione delle chiavi.
+
+```java
+out.println(userToSend + "/@/Key/@/<-not found");
+```
+Specifica al Client quali utenti non sono stati trovati
+```java
+Pattern.matches("^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$, userName)) "
+```
+Controlla se userName rispetta lo standard deciso: solo trattini alti o bassi interni al nome.
+
+# Ulteriori informazioni
+## Build with
+- Java version 17
+
+##  Traguardi
+- [x] In caso di utente inesistente notificare il client dell'errore.
+- [x] Evitare la presenza di più client con lo stesso nome collegati contemporaneamente.
+- [x] Gestita fase di Exit dei client con annesso cancellazione userName dalla mappa.
+- [ ] Programma funzionante su MacOs  (￣▼￣)
+
+## License
+Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights reserved. SAFJNEST PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+
+## Contacts
+
+### Galantini Corrado
+- galantini.corrado@istitutomontani.edu.it
+- Git <a href="https://github.com/XOShu4%22%3EXOShu4</a> 
+- Discord Mario Giordano#3698
+   
+### Lorenzo Sanseverino
+- lorenzosanseverino2003@gmail.com
+- Git <a href="https://github.com/NeutronSun%22%3ENeutronSun</a> 
+- Discord Sun#7606.
+
+### Panichi Leonardo
+- panichileonardo4@gmail.com
+- Git <a href="https://github.com/Leon412%22%3ELeon412</a> 
+- Discord Leon_#7949
