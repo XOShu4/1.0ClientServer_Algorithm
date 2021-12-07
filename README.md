@@ -82,5 +82,5 @@ Gestisce tutti i messaggi che sono indirizzati al Client dal ServerThread.
 
 ##
 ## Codice, Protocolli ed Esempi
-```java```
-aaasakhjduija
+```java
+out.println("/@/Key/@/" + s);```
