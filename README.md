@@ -27,7 +27,7 @@ Verra' quindi richiesto UserName identificativo.
 Il primo dedito a ricevere i comandi dello user. Stampa eventuali errori di sintassi del comando e in caso di utenti non trovati;   
 Il secondo si occupa solamente della stampa dei messaggi ricevuti.
 
-#
+## Classi
 ### Server
 Attendere richieste di connessone da parte dei client.    
 Quando avviene la connessione con un client avvia un thread della classe ServerThread che gestira' i comandi degli utenti  
@@ -69,5 +69,8 @@ Avvia ServerThreadReader.
 legge i messaggi in msgBox e li scrive al ClientReader.
 
 ### CientReader
+Classe che si occupa di smistare tutti i messaggi inviati da server e o serverThread secondo protocollo.
+Si occupa in oltre di decriptare i messaggi ricevuti e di avviare Terminal.
 
+###
 
