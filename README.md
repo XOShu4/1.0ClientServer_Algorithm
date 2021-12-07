@@ -48,4 +48,6 @@ Contiene tutte le informazioni che vanno a caratterizzare un messaggio:
 2. **time** -> ora e minuto in cui e' stato inviato il messaggio.
 3. **sender**-> utente che ha inviato il messaggio.
   
-La funzione getMessage ritorna il messaggio nel formato "[" + time + "] " + Sender + "@:" + message.
+La funzione getMessage ritorna il messaggio nel formato "[" + time + "] " + Sender + "@:" + message.  
+
+### MsgBox
