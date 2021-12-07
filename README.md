@@ -11,8 +11,11 @@ Interfacciamento di piu client implementando algoritmo di crittografia RSA.
 
 ## Partecipanti del gruppo 
 - **Galantini Corrado**
+- **Sanseverino Lorenzo**
+- **Panichi Leonardo**      
 - **Donzelli Lorenzo**
-- **Aprea Mario**       
+- **Aprea Mario** 
+
 
 ### Spiegazione generale del funzionamneto del programma
 I client si connettono ad un server mediante socket. 
@@ -68,9 +71,15 @@ Avvia ServerThreadReader.
 ### ServerThreadReader 
 legge i messaggi in msgBox e li scrive al ClientReader.
 
-### CientReader
+### ClientReader
 Classe che si occupa di smistare tutti i messaggi inviati da server e o serverThread secondo protocollo.
-Si occupa in oltre di decriptare i messaggi ricevuti e di avviare Terminal.
+Si occupa in oltre di decriptare i messaggi ricevuti e di avviare Terminal ed il relativo nuovo terminale.
 
-###
+### Terminal
+Classe che gestisce il nuovo cmd.  
+La porta socket viene condivisa tramite file contenente un numero incrementale.  
+Gestisce tutti i messaggi che sono indirizzati al Client dal ServerThread.
+
+
+## Codice, Protocolli ed Esempi
 
