@@ -127,5 +127,5 @@ Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights
 
 ### Panichi Leonardo
 - panichileonardo4@gmail.com
-- Git <a href="https://github.com/Leon412%22%3ELeon412 </a> 
+- Git <a href="https://github.com/Leon412">Leon412</a>
 - Discord Leon_#7949
