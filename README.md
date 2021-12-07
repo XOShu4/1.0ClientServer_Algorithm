@@ -3,8 +3,8 @@
 ### Introduzione al progetto
 
 ## Panoramica
-#### Scopo del programma: 
-Interfacciamento di piu client implementando algoritmo di crittografia RSA.
+### Scopo del programma: 
+##### Interfacciamento di piu client implementando algoritmo di crittografia RSA.
 
 ## Creato con 
 - Java
