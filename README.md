@@ -117,12 +117,12 @@ Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights
 
 ### Galantini Corrado
 - galantini.corrado@istitutomontani.edu.it
-- Git <a href="https://github.com/XOShu4%22%3EXOShu4 </a> 
+- Git <a href="https://github.com/XOShu4">XOShu4 </a> 
 - Discord Mario Giordano#3698
    
 ### Lorenzo Sanseverino
 - lorenzosanseverino2003@gmail.com
-- Git <a href="https://github.com/NeutronSun%22%3ENeutronSun </a> 
+- Git <a href="https://github.com/NeutronSun">NeutronSun </a> 
 - Discord Sun#7606.
 
 ### Panichi Leonardo
