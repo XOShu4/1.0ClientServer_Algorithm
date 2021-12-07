@@ -59,4 +59,15 @@ I metodi predisposti sono:
 4. **readBox**-> se ci sono messaggi per l utente allora legge la prima cella dell ArrayList occupata e la rimuove.
 
 ### ServerThread
+Avviato da Server si occupa dell'interfacciamento tra client e MsgBox.   
+Memorizza, legendoli da client, le cliavi publiche associandoli ai rispettivi userName.  
+Smista i possibili comandi inseriti nel server e si occupa principalmente di inviare le chiavi richieste ai client e inserire i messaggi criptati  
+nella msgBox.  
+Avvia ServerThreadReader. 
+
+### ServerThreadReader 
+legge i messaggi in msgBox e li scrive al ClientReader.
+
+### CientReader
+
 
