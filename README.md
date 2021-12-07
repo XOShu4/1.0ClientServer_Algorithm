@@ -48,6 +48,15 @@ Contiene tutte le informazioni che vanno a caratterizzare un messaggio:
 2. **time** -> ora e minuto in cui e' stato inviato il messaggio.
 3. **sender**-> utente che ha inviato il messaggio.
   
-La funzione getMessage ritorna il messaggio nel formato "[" + time + "] " + Sender + "@:" + message.  
+La funzione getMessage ritorna il messaggio nel formato *"[" + time + "] " + Sender + "@:" + message*.  
 
 ### MsgBox
+Classe che gestisce la mappa di ArrayList di *Message*.
+I metodi predisposti sono:
+1. **addUser**-> prende come parametro *userName* e controlla se il nome e' gia presente, se non lo e' verifica se rispetta il formato richiesto, nel caso aggiunge l'utente.
+2. **remuveUser**-> prende come parametro un u*serName* e lo rimuove dalla mappa. Metodo usato alla disconnessione dei client.
+3. **addMsg**-> inserisce un messaggio(*Message*) nel ArrayList del utente specificato. returna *not fount* nel caso di utente non trovato.
+4. **readBox**-> se ci sono messaggi per l utente allora legge la prima cella dell ArrayList occupata e la rimuove.
+
+### ServerThread
+
