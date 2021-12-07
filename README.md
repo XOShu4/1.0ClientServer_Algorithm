@@ -80,6 +80,6 @@ Classe che gestisce il nuovo cmd.
 La porta socket viene condivisa tramite file contenente un numero incrementale.  
 Gestisce tutti i messaggi che sono indirizzati al Client dal ServerThread.
 
-
+#
 ## Codice, Protocolli ed Esempi
 
