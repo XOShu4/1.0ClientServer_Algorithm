@@ -17,7 +17,7 @@
 - **Aprea Mario** 
 
 
-### Spiegazione generale del funzionamneto del programma
+### Spiegazione generale del funzionamento del programma
 I client si connettono ad un server mediante socket. 
 Verra' quindi richiesto UserName identificativo.  
 #### possibili comandi sono:  
@@ -63,7 +63,7 @@ I metodi predisposti sono:
 
 ### ServerThread (^○^)
 Avviato da Server si occupa dell'interfacciamento tra client e MsgBox.   
-Memorizza, legendoli da client, le cliavi publiche associandoli ai rispettivi userName.  
+Memorizza, leggendoli da client, le chiavi publiche e associandoli ai rispettivi userName.  
 Smista i possibili comandi inseriti nel server e si occupa principalmente di inviare le chiavi richieste ai client e inserire i messaggi criptati  
 nella msgBox.  
 Avvia ServerThreadReader. 
@@ -73,7 +73,7 @@ legge i messaggi in msgBox e li scrive al ClientReader.
 
 ### ClientReader
 Classe che si occupa di smistare tutti i messaggi inviati da server e o serverThread secondo protocollo.
-Si occupa in oltre di decriptare i messaggi ricevuti e di avviare Terminal ed il relativo nuovo terminale.
+Si occupa inoltre di decriptare i messaggi ricevuti e di avviare il Terminal ed il relativo nuovo terminale.
 
 ### Terminal  (。￣。)
 Classe che gestisce il nuovo cmd.  
@@ -107,7 +107,7 @@ Controlla se userName rispetta lo standard deciso: solo trattini alti o bassi in
 ##  Traguardi
 - [x] In caso di utente inesistente notificare il client dell'errore.
 - [x] Evitare la presenza di più client con lo stesso nome collegati contemporaneamente.
-- [x] Gestita fase di Exit dei client con annesso cancellazione userName dalla mappa.
+- [x] Gestita fase di Exit dei client con annessa cancellazione userName dalla mappa.
 - [ ] Programma funzionante su MacOs  (￣▼￣)
 
 ## License
