@@ -33,7 +33,7 @@ Il secondo si occupa solamente della stampa dei messaggi ricevuti.
 ## Classi   (￣人￣)
 ### Server
 Attendere richieste di connessone da parte dei client.    
-Quando avviene la connessione con un client avvia un thread della classe ServerThread che gestira' i comandi degli utenti  
+Quando avviene la connessione con un client avvia un thread della classe ServerThread che gestira' i comandi degli utenti.
    
 ### Client
 Classe adibita all'interfacciamento utente.  
