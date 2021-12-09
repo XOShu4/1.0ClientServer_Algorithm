@@ -120,6 +120,11 @@ Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights
 - Git <a href="https://github.com/XOShu4">XOShu4 </a> 
 - Discord Mario Giordano#3698
    
+### Donzelli Lorenzo
+- donzelli.lorenzo@istitutomontani.edu.it
+- Git <a href="https://github.com/Donz03">Donz03 </a> 
+- Discord Donz_Lorenzo#2286
+   
 ### Lorenzo Sanseverino
 - lorenzosanseverino2003@gmail.com
 - Git <a href="https://github.com/NeutronSun">NeutronSun </a> 
