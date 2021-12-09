@@ -134,3 +134,7 @@ Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights
 - donzelli.lorenzo@istitutomontani.edu.it
 - Git <a href="https://github.com/Donz03">Donz03 </a> 
 - Discord Donz_Lorenzo#2286
+
+### Aprea Mario
+- aprea.mario@istitutomontani.edu.it
+- 
