@@ -1,9 +1,0 @@
-  static HashMap <String, String> colori = new HashMap<String, String>();
-    private static void riempiColori(){
-        colori.put("black","\033[30m");
-        colori.put("red","\033[31m");
-        colori.put("green","\033[32m");
-        colori.put("yellow","\033[33m");
-        colori.put("blue","\033[34m");
-        colori.put("white","\033[97m");
-    }
