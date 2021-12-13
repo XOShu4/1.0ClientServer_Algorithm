@@ -67,7 +67,7 @@ public class ServerThread extends Thread {
                 String msgToSend = "";
                 boolean sent = false;
                 String userToSend;
-                if(clientIn.equals("/sendToAll:")){                             //se il comando e' "/sendToAll:" allora                        
+                if(clientIn.equals("/All:")){                             //se il comando e' "/sendToAll:" allora                        
                     for (String s : PubKey) {                                   //invio al client la chiave di tutti i Client connessi tranne la sua
                         if(!s.substring(0, s.indexOf(":")).equals(userName)){   //"/@/Key/@/"  e' un protocollo
                             clientIn="";
