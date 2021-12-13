@@ -43,7 +43,7 @@ public class ClientReader extends Thread {
      */
     PrintWriter toTerminal;
     /**
-     * porta del socket presa da file
+     * Porta del socket presa da file
      */
     private static int port;
     /**
