@@ -14,6 +14,7 @@ import java.io.*;
  * @author XOShu4
  * @author NeutronSun
  * classe che genera KeyPub e KeyPrv partendo da p e q
+ * NeutronSun: "Classe molto interessante."
  */
 public class RsaKey {
     /**
