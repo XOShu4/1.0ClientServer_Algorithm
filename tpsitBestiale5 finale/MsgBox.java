@@ -30,6 +30,8 @@ public class MsgBox {
      * controlla se l'userName esiste e rispetta certi criteri
      * @param userName
      * @return raplay del metodo: buon fine o fallimento di sing in.
+     * <p>
+     * NeutronSun: "Si, RaiPlay...Impara a scrivere pls"
      */
     public synchronized String addUser(String userName) {
         if (AsheBox.containsKey(userName))                          //se l'username e' presente dico al ServerThread di far reinserire l'userName al Client
