@@ -11,7 +11,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 /**
  * @author XOShu4
- * classe contenente gli attributi del oggetto message.
+ * Classe contenente gli attributi del oggetto message.
+ * NeutronSun: "Non avrei saputo spiegarlo meglio.";
  */
 public class Message {
     /**
