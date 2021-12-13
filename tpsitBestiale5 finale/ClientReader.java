@@ -39,7 +39,7 @@ public class ClientReader extends Thread {
      */
     String returnShared = "";
     /**
-     * oggetto che invia messaggi a Terminal
+     * Oggetto che invia messaggi a Terminal
      */
     PrintWriter toTerminal;
     /**
