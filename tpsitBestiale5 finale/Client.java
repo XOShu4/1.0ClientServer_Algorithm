@@ -137,7 +137,7 @@ public class Client {
             ClientReader t = new ClientReader(out, in, Key);
             new Thread(t).start();
             dibStamp(
-                    "Connessione con il server effettuata\nCOMANDI:\n/listaUtenti:\n/NomeUtente1/NomeUtenteN: msg\n/sendToAll: msg\n/SetOutSpeed:\n/EXIT");
+                    "Connessione con il server effettuata\nCOMANDI:\n/listaUtenti:\n/NomeUtente1/NomeUtenteN: msg\n/All: msg\n/Speed:\n/EXIT");
             String userInput = null;
             try { // inizio presa in input messaggi utente. i comandi inseriti vengono smistati.
                 while (!(userInput = stdIn.readLine()).equals("/EXIT")) {// uscita del utente e rimozione del username
@@ -146,7 +146,7 @@ public class Client {
                         t.getEXIT();
                         socket.close();
                     }
-                    if (userInput.equals("SetOutSpeed:")) {
+                    if (userInput.equals("/Speed:")) {
                         dibStamp("f-> Veloce\nm-> Medio\ns->piano");
                         userInput = stdIn.readLine();
                         if (userInput.equals("f"))
@@ -157,8 +157,8 @@ public class Client {
                             speed = 30;
                         else
                             dibStamp("comando non riconosciuto!");
-                    } else if (userInput.contains("/sendToAll:")) { // invio del messaggio a tutti i Client online
-                        out.println("/sendToAll:");
+                    } else if (userInput.contains("/All:")) { // invio del messaggio a tutti i Client online
+                        out.println("/All:");
                         while (!shared.contains("STOP")) { // finche ci sono Client allora
                             do {
                                 Thread.sleep(100);
