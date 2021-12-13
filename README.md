@@ -23,8 +23,8 @@ Verra' quindi richiesto UserName identificativo.
 #### possibili comandi sono:  
 * **/UserName(/s): messaggio** -> invia *messaggio* a tutti gli utenti ≧ω≦ specificati. Se uno o piu utenti non vengono trovati viene segnato *UserName* not fount, ed il messaggio viene inviato solo agli utenti trovati;  
 * **/listaUtenti** -> elenca tutti gli utenti online.
-*  **/SendToAll: messaggio** ->invia *messaggio* a tutti gli utenti online
-*  **/SetOutSpeed:**-> puoi modificare la velocita di scrittura sul terminale in lenta, media o veloce.
+*  **/All: messaggio** ->invia *messaggio* a tutti gli utenti online
+*  **/Speed:**-> puoi modificare la velocita di scrittura sul terminale in lenta, media o veloce.
 *  **/EXIT** ->  chiude la connessione con il server  
    
 #### L'interfaccia utente e' suddivisa in due terminali:   
