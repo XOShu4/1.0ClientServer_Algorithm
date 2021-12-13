@@ -52,7 +52,7 @@ public class ClientReader extends Thread {
     private boolean Exit = false;
 
     /**
-     * avvio di un altro socket tra ClientReader e Terminal, con porta presa da
+     * Avvio di un altro socket tra ClientReader e Terminal, con porta presa da
      * file,
      * che viene ripresa da Terminal e riscritta nel file incrementata di uno.
      * viene aperto un altro cmd gestito dalla classe Terminal (UwU)
@@ -61,7 +61,9 @@ public class ClientReader extends Thread {
      * @param in  BufferedReader passato da Client
      * @param Key Oggetto delle chiavi RSA passato da Client
      * @throws IOException
+     * mi sembra impossibile
      * @throws InterruptedException
+     * improponibile
      */
     public ClientReader(PrintWriter out, BufferedReader in, RsaKey Key) throws IOException, InterruptedException {
         this.out = out;
