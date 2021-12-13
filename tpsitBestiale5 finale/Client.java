@@ -19,17 +19,17 @@ import java.net.*;
  *         richiesta chiavi, e la criptazione dei messaggi.
  */
 public class Client {
-    /** velocita della stampa su dibStamp */
+    /** Velocita della stampa su dibStamp */
     static private int speed = 20;
-    /** istanzia classe RsaKey generando le chiavi */
+    /** Istanzia classe RsaKey generando le chiavi */
     private static RsaKey Key = new RsaKey();
     /**
-     * variabile condivisa tra Client e ClientThread in cui vengono inserite alcune
+     * Variabile condivisa tra Client e ClientThread in cui vengono inserite alcune
      * risposte del Server
      */
     static String shared = "";
     /**
-     * username del Client
+     * Username del Client
      */
     static String userName = "";
 
