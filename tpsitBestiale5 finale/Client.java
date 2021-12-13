@@ -198,7 +198,7 @@ public class Client {
                                 Thread.sleep(100);
                                 shared = t.getShared();
                             } while (shared.equals(""));
-                            if (shared.contains("<- not found")) {
+                            if (shared.contains("<-not found")) {
                                 dibStamp(s + "<- not found");
                             } else {
                                 String AppKey = shared;
