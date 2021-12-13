@@ -47,7 +47,7 @@ public class ClientReader extends Thread {
      */
     private static int port;
     /**
-     * se true allora esce dal while
+     * Se true allora esce dal while
      */
     private boolean Exit = false;
 
