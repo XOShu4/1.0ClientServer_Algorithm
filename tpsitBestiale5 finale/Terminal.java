@@ -15,6 +15,8 @@ import java.util.Scanner;
  *classe che gestisce il nuovo cmd. 
  *legge porta socket su file e la riscrive incrementata.
  *gestisce tutti i messaggi che sono indirizzati al Client dal ServerThread.
+ <p>
+  NeutronSun: "<3"
  * @author NeutronSun
  * @author XOShu4
  */

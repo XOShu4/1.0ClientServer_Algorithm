@@ -12,6 +12,7 @@ import java.util.*;
 /**
  * @author XOShu4
  * Classe contenente gli attributi del oggetto message.
+ * <p>
  * NeutronSun: "Non avrei saputo spiegarlo meglio.";
  */
 public class Message {
