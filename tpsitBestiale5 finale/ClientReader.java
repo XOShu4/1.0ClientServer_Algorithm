@@ -31,7 +31,7 @@ public class ClientReader extends Thread {
      */
     RsaKey Key;
     /**
-     * messaggio che va condiviso con con Client inviato da ServerThread
+     * Messaggio che va condiviso con con Client inviato da ServerThread
      */
     String shared = "";
     /**
