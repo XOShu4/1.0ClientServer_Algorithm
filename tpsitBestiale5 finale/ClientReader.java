@@ -35,7 +35,7 @@ public class ClientReader extends Thread {
      */
     String shared = "";
     /**
-     * messaggio che il Client legge dalla funzione getShared()
+     * Messaggio che il Client legge dalla funzione getShared()
      */
     String returnShared = "";
     /**
