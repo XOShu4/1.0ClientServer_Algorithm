@@ -34,21 +34,22 @@ public class Client {
     static String userName = "";
 
     /**
-     * @param subCypherText inserito dall'utente. e' la stringa da criptare.
+     * @param SubCypherText inserito dall'utente. e' la stringa da criptare.
      * 
-     * @param e             passato da ServerThread e' parte della chiave pubblica
+     * @param e             Passato da ServerThread e' parte della chiave pubblica
      *                      dell'utente a cui si vuole mandare il messaggio.
      * 
-     * @param n             passato da ServerThread e' parte della chiave pubblica
+     * @param n             Passato da ServerThread e' parte della chiave pubblica
      *                      dell'utente a cui si vuole mandare il messaggio.
      * 
-     *                      funzione volta a trasformare in BigInteger il messaggio
+     *                      Funzione volta a trasformare in BigInteger il messaggio
      *                      per poi criptarlo.
      * 
      * @return subCodeText, numero BigInteger prodotto dalla criptazione del
      *         messaggio.
      * 
      * @throws UnsupportedEncodingException
+     * 
      */
 
     private static BigInteger subCript(String subCypherText, BigInteger e, BigInteger n)
@@ -61,7 +62,7 @@ public class Client {
     }
 
     /**
-     * funzione che estrapola le Key del Client ricevente e, utilizzando il metodo
+     * Funzione che estrapola le Key del Client ricevente e, utilizzando il metodo
      * subCript, cripta il messaggio
      * 
      * @param AppKey
@@ -69,6 +70,7 @@ public class Client {
      * @return appMsg, numero BigInteger prodotto dalla criptazione del
      *         messaggio.
      * @throws UnsupportedEncodingException
+     * mi sembra impossibile
      */
     private static BigInteger msgEnc(String AppKey, String ToMessage) throws UnsupportedEncodingException {
         String onlyKays = AppKey.substring(AppKey.indexOf(":") + 1);
@@ -80,7 +82,7 @@ public class Client {
         return appMsg;
     }
 
-    /** Stampa bufferizzata */
+    /** Stampa bufferizzata: insane */
     private static void dibStamp(String ssOut) throws InterruptedException {
         for (char ss : ssOut.toCharArray()) {
             System.out.print(ss);
@@ -89,7 +91,7 @@ public class Client {
         System.out.println();
     }
 
-    /** roba seria  ᕕ(ಥʖ̯ಥ)ᕗ
+    /** Roba seria  ᕕ(ಥʖ̯ಥ)ᕗ
      * @author XOShu4 
      * @author NeutronSun
      * @author Leon412
@@ -113,6 +115,12 @@ public class Client {
                 + "\033[90m╚══════╝\033[93m╚═╝  ╚═╝\033[90m╚═╝   \033[93m ╚════╝     \033[90m╚═╝  ╚═══╝\033[93m╚══════╝\033[90m╚══════╝\033[93m   ╚═╝\n\033[37m");
         speed = foo;
     }
+
+    /**  
+     * Bestione
+     * @param args
+     * nessuno sa a cosa serve
+    */
     public static void main(String[] args) throws IOException, InterruptedException {
         String hostName = "localhost";
         int portNumber = 65535;
@@ -219,6 +227,7 @@ public class Client {
             System.exit(1);
         }
     }
+  
     public String getUame() {
         return userName;
     }
