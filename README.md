@@ -97,7 +97,7 @@ out.println(userToSend + "/@/Key/@/<-not found");
 ```
 Specifica al Client quali utenti non sono stati trovati
 ```java
-Pattern.matches("^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$, userName)) 
+Pattern.matches("^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$", userName)) 
 ```
 Controlla se userName rispetta lo standard deciso: solo trattini alti o bassi interni al nome.
 
