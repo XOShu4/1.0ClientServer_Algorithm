@@ -90,9 +90,8 @@ public class ClientReader extends Thread {
                 String[] args = new String[] {"/bin/bash", "-c", "java Terminal"};      //dovrebbe avviare il cmd di mac, PROB. NON FUNZIONA (non testato)
                 rt.exec(args);
             }
-            else{
+            else
                 System.out.println("app non supportata.");
-            }
             Socket terminalS = serverSocket.accept(); // crea la nuova connessione
             toTerminal = new PrintWriter(terminalS.getOutputStream(), true);
         }
@@ -104,19 +103,16 @@ public class ClientReader extends Thread {
         try {
             toTerminal.println(obj.getUame());
             while ((nServer = in.readLine()) != null && Exit == false) { // input da ServerThread
-                if (nServer.contains("/@/Key/@/")) { // se inizia con il protocollo "/@/Key/@/" allora non va mandato a
+                if (nServer.contains("/@/Key/@/")) // se inizia con il protocollo "/@/Key/@/" allora non va mandato a
                     shared = nServer; // Terminal ma va mandato al client, poi letto tramite la funzione getShared :(
-                } else if (nServer.contains(":MsgToDec:/")) { // se inizzia con il protocollo ":MsgToDec:/" va prima UwU
-                    BigInteger appoggio = new BigInteger(nServer.substring(nServer.indexOf("@:") + 2)); // decriptato
-                                                                                                        // poi inviato
-                                                                                                        // al Terminal
+                 else if (nServer.contains(":MsgToDec:/")) { // se inizzia con il protocollo ":MsgToDec:/" va prima UwU
+                    BigInteger appoggio = new BigInteger(nServer.substring(nServer.indexOf("@:") + 2)); // decriptato poi inviato al Terminal
                     appoggio = appoggio.modPow(Key.getD(), Key.getN());
                     byte[] erbite = appoggio.toByteArray();
                     String decrypted = new String(erbite, "UTF-8");
                     toTerminal.println(nServer.substring(11, nServer.indexOf("@:") + 2) + decrypted);
-                } else if (!nServer.equals("completed")) { // in qualsiasi altro caso e' un replay che va mandato a
+                } else if (!nServer.equals("completed"))  // in qualsiasi altro caso e' un replay che va mandato a
                     toTerminal.println(nServer); // Terminal apparte completed
-                }
             }
 
         } catch (IOException e) {

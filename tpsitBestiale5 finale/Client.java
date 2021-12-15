@@ -82,40 +82,6 @@ public class Client {
         return appMsg;
     }
 
-    /** Stampa bufferizzata: insane */
-    private static void dibStamp(String ssOut) throws InterruptedException {
-        for (char ss : ssOut.toCharArray()) {
-            System.out.print(ss);
-            Thread.sleep(speed);
-        }
-        System.out.println();
-    }
-
-    /** Roba seria  ᕕ(ಥʖ̯ಥ)ᕗ
-     * @author XOShu4 
-     * @author NeutronSun
-     * @author Leon412
-    */
-    public static void loadingBee() throws InterruptedException {
-        int foo = speed;
-        speed = 4;
-
-        dibStamp("\033[46;30m "
-                + "                                                      __            \t\n"
-                + "                                                      // \\           \t\n"
-                + "                                                      \\\\_/ //        \t\n"
-                + "                                     '-.._.-''-.._.. -(||)(')        \t\n"
-                + "                                                       '''           \t");
-        dibStamp(""
-                + "\033[90m███████╗\033[93m █████╗ \033[90m███████╗\033[93m   ██╗    \033[90m███╗   ██╗\033[93m███████╗\033[90m███████╗\033[93m████████╗\033[40m\n"
-                + "\033[90m██╔════╝\033[93m██╔══██╗\033[90m██╔════╝\033[93m   ██║    \033[90m████╗  ██║\033[93m██╔════╝\033[90m██╔════╝\033[93m╚══██╔══╝\n"
-                + "\033[90m███████╗\033[93m███████║\033[90m█████╗  \033[93m   ██║    \033[90m██╔██╗ ██║\033[93m█████╗  \033[90m███████╗\033[93m   ██║   \n"
-                + "\033[90m╚════██║\033[93m██╔══██║\033[90m██╔══╝\033[93m██   ██║    \033[90m██║╚██╗██║\033[93m██╔══╝  \033[90m╚════██║\033[93m   ██║   \n"
-                + "\033[90m███████║\033[93m██║  ██║\033[90m██║   \033[93m╚█████╔╝    \033[90m██║ ╚████║\033[93m███████╗\033[90m███████║\033[93m   ██║   \n"
-                + "\033[90m╚══════╝\033[93m╚═╝  ╚═╝\033[90m╚═╝   \033[93m ╚════╝     \033[90m╚═╝  ╚═══╝\033[93m╚══════╝\033[90m╚══════╝\033[93m   ╚═╝\n\033[37m");
-        speed = foo;
-    }
-
     /**  
      * Bestione
      * @param args
@@ -131,21 +97,20 @@ public class Client {
             String serverReply;
             /** sing in utente */
             do {
-                dibStamp("inserisci nome utente");
+                SafJNest.printDbmrStyle("inserisci nome utente", speed);
                 userName = stdIn.readLine();
                 out.println(userName);
                 serverReply = in.readLine();
-                dibStamp(serverReply);
+                SafJNest.printDbmrStyle(serverReply);
             } while (!serverReply.equals("sign up effettuato"));
-            dibStamp("Connecting...");
-            loadingBee();
+            SafJNest.printDbmrStyle("Connecting...", speed);
+            SafJNest.loadingBee(8);
             /** passaggio chiave publica al ServerThread */
             out.println(Key.getE() + "/" + Key.getN());
             /** avvio thread ClientReader */
             ClientReader t = new ClientReader(out, in, Key);
             new Thread(t).start();
-            dibStamp(
-                    "Connessione con il server effettuata\nCOMANDI:\n/listaUtenti:\n/NomeUtente1/NomeUtenteN: msg\n/All: msg\n/Speed:\n/EXIT");
+            SafJNest.printDbmrStyle("Connessione con il server effettuata\nCOMANDI:\n/listaUtenti:\n/NomeUtente1/NomeUtenteN: msg\n/All: msg\n/Speed:\n/EXIT", speed);
             String userInput = null;
             try { // inizio presa in input messaggi utente. i comandi inseriti vengono smistati.
                 while (!(userInput = stdIn.readLine()).equals("/EXIT")) {// uscita del utente e rimozione del username
@@ -155,7 +120,7 @@ public class Client {
                         socket.close();
                     }
                     if (userInput.equals("/Speed:")) {
-                        dibStamp("f-> Veloce\nm-> Medio\ns->piano");
+                        SafJNest.printDbmrStyle("f-> Veloce\nm-> Medio\ns->piano", speed);
                         userInput = stdIn.readLine();
                         if (userInput.equals("f"))
                             speed = 10;
@@ -164,7 +129,7 @@ public class Client {
                         else if (userInput.equals("s"))
                             speed = 30;
                         else
-                            dibStamp("comando non riconosciuto!");
+                            SafJNest.printDbmrStyle("comando non riconosciuto!", speed);
                     } else if (userInput.contains("/All:")) { // invio del messaggio a tutti i Client online
                         out.println("/All:");
                         while (!shared.contains("STOP")) { // finche ci sono Client allora
@@ -189,7 +154,7 @@ public class Client {
                                 shared = t.getShared();
                             } while (shared.equals("")); // attendo che ClientTherad scriva su shared
                             if (!shared.contains("STOP")) {
-                                dibStamp("<User>" + shared.substring(9));
+                                SafJNest.printDbmrStyle("<User>" + shared.substring(9), speed);
                                 out.println(); // usato per abozzare una sincronizazzione tra Client e ServerThread <3
                                 shared = "";
                             }
@@ -207,9 +172,9 @@ public class Client {
                                     Thread.sleep(100);
                                     shared = t.getShared();
                                 } while (shared.equals(""));
-                                if (shared.contains("<-not found")) {
-                                    dibStamp(s + "<- not found");
-                                } else {
+                                if (shared.contains("<-not found")) 
+                                    SafJNest.printDbmrStyle(s + "<- not found", speed);
+                                else {
                                     String AppKey = shared;
                                     shared = "";
                                     BigInteger appMsg = msgEnc(AppKey, ToMessage);
@@ -218,9 +183,9 @@ public class Client {
                             }
                         }
                     } else
-                        dibStamp("comando non riconoscito");
+                        SafJNest.printDbmrStyle("comando non riconoscito", speed);
                 }
-                dibStamp("Exit...");
+                SafJNest.printDbmrStyle("Exit...", speed);
             } catch (IOException e) {
                 e.printStackTrace();
             }

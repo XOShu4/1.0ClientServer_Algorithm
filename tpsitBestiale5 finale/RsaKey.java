@@ -8,7 +8,6 @@
  * 
  */
 import java.math.BigInteger;
-import java.util.*;
 /**
  * @author XOShu4
  * @author NeutronSun
@@ -46,8 +45,7 @@ public class RsaKey {
     private BigInteger lastPrime = new BigInteger("100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000367");
 
     public RsaKey() {
-        
-        lastPrime = new BigInteger(lastPrime.bitLength(), new Random());
+        lastPrime = SafJNest.randomBighi(1024);
         p = newPrime(lastPrime);
         q = newPrime(p);
         e = newPrime(q);
@@ -71,9 +69,7 @@ public class RsaKey {
         BigInteger a = new BigInteger("2");
         if(prime.mod(BigInteger.TWO).equals(BigInteger.ZERO))
             prime = prime.add(BigInteger.ONE);
-        do {
-            prime = prime.add(BigInteger.TWO);
-        } while (!a.modPow(prime.subtract(BigInteger.ONE), prime).equals(BigInteger.ONE));
+        do {prime = prime.add(BigInteger.TWO);} while (!a.modPow(prime.subtract(BigInteger.ONE), prime).equals(BigInteger.ONE));
         lastPrime = prime;
         return prime;
     }

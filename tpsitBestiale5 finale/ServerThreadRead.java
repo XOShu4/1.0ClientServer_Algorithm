@@ -1,3 +1,4 @@
+
 /**
  * Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights reserved.
  * SAFJNEST PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
@@ -8,9 +9,11 @@
  * 
  */
 import java.io.PrintWriter;
+
 /**
  * @author XOShu4
- * avviata da ServerThread si occupa di leggere i messaggi del rispettivo Client dentro MsgBox
+ *         avviata da ServerThread si occupa di leggere i messaggi del
+ *         rispettivo Client dentro MsgBox
  */
 public class ServerThreadRead extends Thread {
     /**
@@ -27,20 +30,18 @@ public class ServerThreadRead extends Thread {
     String UserName;
 
     public ServerThreadRead(PrintWriter out, MsgBox msgBox, String UserName) {
+        super("theReader");// @author NeutronSun, TheGodOfThread. :D
         this.out = out;
         this.msgBox = msgBox;
         this.UserName = UserName;
     }
 
     public void run() {
-        synchronized (msgBox) {                                                          //metodo sincronizzato
-            while (true) {  
-                try {
-                    out.println(":MsgToDec:/" + msgBox.readBox(UserName));               //chiede ogni volta che puo di leggere la msgBox e il return lo manda al ClientReader 
-                } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
+        while (true) {
+            try { // chiede ogni volta che puo di leggere la msgBox e il return lo manda al
+                out.println(":MsgToDec:/" + msgBox.readBox(UserName)); // ClientReader
+            } catch (Exception e) {
+                return;
             }
         }
     }
