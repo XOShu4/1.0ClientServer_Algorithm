@@ -42,8 +42,7 @@ Gestisce la prima fase log in, la ricezione messaggi utente, la criptazione dei 
 Inoltre avvia e comunica con ClientReader.
 
 ### RsaKey
-Prende da file p,q,e. 
-Il file e' composto da numeri (¬‿¬) primi, tutti i numeri utilizzati nell'algoritmo vengono segnati con "/".  
+Genera p,q,e casualmente tenendo conto del ultimo numero generato *lastPrime* e partendo da quello per calcolare i seguenti.  
 Una volta scelti i numeri calcola la chiave pubblica e privata.
 
 ### Message
