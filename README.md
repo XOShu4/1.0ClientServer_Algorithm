@@ -4,7 +4,7 @@
 
 ## Panoramica
 ### Scopo del programma: 
-##### Interfacciamento di piu client implementando algoritmo di crittografia RSA.
+##### Interfacciamento di piu' client implementando algoritmo di crittografia RSA.
 
 ## Creato con 
 - Java
@@ -32,8 +32,12 @@ Il primo dedito a ricevere i comandi dello user. Stampa eventuali errori di sint
 Il secondo si occupa solamente della stampa dei messaggi ricevuti.
 
 ## Classi   (￣人￣)
+
+### SafJNest
+La classe implementata ha varie funzioni predefinite quali:
+la stampa sel logo, il calcolo dei numeri primi in maniera random, la stampa bufferizzata ed altre <3.
 ### Server
-Attendere richieste di connessone da parte dei client.    
+Attende richieste di connessone da parte dei client.    
 Quando avviene la connessione con un client avvia un thread della classe ServerThread che gestira' i comandi degli utenti.
    
 ### Client
