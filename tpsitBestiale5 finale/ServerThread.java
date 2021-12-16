@@ -18,7 +18,6 @@ import java.io.*;
  *         prende in input i comandi del Client.
  *         trasferisce i messaggi alla MsgBox.
  *         genere il Thread ServerThreadTReader
- *         NeutronSun: "Bravo, copiamo il nome della classe. Essere inutile."
  */
 
 public class ServerThread extends Thread {
