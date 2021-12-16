@@ -70,7 +70,6 @@ public class Client {
      * @return appMsg, numero BigInteger prodotto dalla criptazione del
      *         messaggio.
      * @throws UnsupportedEncodingException
-     * mi sembra impossibile
      */
     private static BigInteger msgEnc(String AppKey, String ToMessage) throws UnsupportedEncodingException {
         String onlyKays = AppKey.substring(AppKey.indexOf(":") + 1);
@@ -82,11 +81,6 @@ public class Client {
         return appMsg;
     }
 
-    /**  
-     * Bestione
-     * @param args
-     * nessuno sa a cosa serve
-    */
     public static void main(String[] args) throws IOException, InterruptedException {
         String hostName = "localhost";
         int portNumber = 65535;
