@@ -108,7 +108,7 @@ Controlla se userName rispetta lo standard deciso: solo trattini alti o bassi in
 - [x] In caso di utente inesistente notificare il client dell'errore.
 - [x] Evitare la presenza di più client con lo stesso nome collegati contemporaneamente.
 - [x] Gestita fase di Exit dei client con annessa cancellazione userName dalla mappa.
-- [ ] Programma funzionante su MacOs  (￣▼￣)
+- [x] **FORSE** Programma funzionante su MacOs  (￣▼￣)
 
 ## License
 Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights reserved. SAFJNEST PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
