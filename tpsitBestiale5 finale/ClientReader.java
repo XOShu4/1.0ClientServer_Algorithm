@@ -65,9 +65,7 @@ public class ClientReader extends Thread {
      * @param in  BufferedReader passato da Client
      * @param Key Oggetto delle chiavi RSA passato da Client
      * @throws IOException
-     * mi sembra impossibile
      * @throws InterruptedException
-     * improponibile
      */
     public ClientReader(PrintWriter out, BufferedReader in, RsaKey Key) throws IOException, InterruptedException {
         this.out = out;
