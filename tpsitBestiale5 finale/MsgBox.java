@@ -22,8 +22,6 @@ public class MsgBox {
     /**
      * mappa di ArrayList con tutti i Client e i rispettivi message ricevuti. le key
      * di mappa sono i nomi dei Client
-     * <p>
-     * NeutronSun: "Ashe otp, champ osceno."
      */
     private HashMap<String, ArrayList<Message>> AsheBox = new HashMap<String, ArrayList<Message>>();
     /**
@@ -36,8 +34,6 @@ public class MsgBox {
      * 
      * @param userName
      * @return raplay del metodo: buon fine o fallimento di sing in.
-     *         <p>
-     *         NeutronSun: "Si, RaiPlay...Impara a scrivere pls"
      */
     public synchronized String addUser(String userName) {
         if (AsheBox.containsKey(userName)) // se l'username e' presente dico al ServerThread di far reinserire l'userName al Client
@@ -82,7 +78,6 @@ public class MsgBox {
      * @param UserName
      * @return messaggio per il Client che fa richiesta
      * @throws InterruptedException
-     *                              no way
      */
     public String readBox(String UserName) {
         String msg;
