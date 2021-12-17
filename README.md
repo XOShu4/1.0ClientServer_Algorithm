@@ -34,8 +34,8 @@ Il secondo si occupa solamente della stampa dei messaggi ricevuti.
 ## Classi   (￣人￣)
 
 ### SafJNest
-La classe implementata ha varie funzioni predefinite quali:
-la stampa sel logo, il calcolo dei numeri primi in maniera random, la stampa bufferizzata ed altre <3.
+La classe implementata ha varie funzioni predefinite quali: \
+la stampa del logo, il calcolo dei numeri primi in maniera random, la stampa bufferizzata ed altre <3.
 ### Server
 Attende richieste di connessone da parte dei client.    
 Quando avviene la connessione con un client avvia un thread della classe ServerThread che gestira' i comandi degli utenti.
