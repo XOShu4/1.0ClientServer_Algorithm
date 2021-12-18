@@ -141,4 +141,3 @@ Copyright (c) 22 Giugno anno 0, 2021, SafJNest and/or its affiliates. All rights
 
 ### Aprea Mario
 - aprea.mario@istitutomontani.edu.it
-- 
