@@ -79,8 +79,12 @@ public class ClientReader extends Thread {
                 String variableToPass = "cmd /c start cmd.exe /k java Terminal";  // avvia il nuovo cmd su windows 
                 rt.exec(variableToPass);    
             } else if (isMac()) {
-                String[] args = new String[] {"/bin/bash", "-c", "java Terminal"}; //dovrebbe avviare il cmd di mac, PROB. NON FUNZIONA (non testato)
+            	String homeDirectory = System.getProperty("./");
+            	System.out.println("Running on Mac");
+            	String[] args = new String[] {"/bin/bash", "-c", "java Terminal", "./"}; //dovrebbe avviare il cmd di mac, PROB. NON FUNZIONA (non testato)
                 rt.exec(args);
+                //rt.exec(String.format("/bin/zsh -c ls %s", homeDirectory));
+
             }else System.out.println("app non supportata.");
             Socket terminalS = serverSocket.accept(); // crea la nuova connessione
             toTerminal = new PrintWriter(terminalS.getOutputStream(), 1>0);
